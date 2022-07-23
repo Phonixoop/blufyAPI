@@ -18,10 +18,13 @@ app.get('/feedback', (req, res) => {
 })
 
 app.post('/feedback', multer().none(), (req, res) => {
-    res.status(200).send('work again ' + req.body.name);
+    console.log(JSON.stringify(req.body, null, 2))
+    res.status(200).send(JSON.stringify(req.body, null, 2));
 })
 
 console.log(`app is listening on port ${PORT}`);
 app.listen(PORT)
 
 module.exports = router
+
+
