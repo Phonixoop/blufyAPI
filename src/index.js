@@ -2,8 +2,12 @@ const express = require('express')
 const app = express();
 const router = express.Router();
 const PORT = process.env.PORT || 3001;
+app.get('/feedback', (req, res) => {
+    res.status(200).send('it is working... 🤗');
+})
+
 app.post('/feedback', (req, res) => {
-    res.json(JSON.stringify(req.body));
+    res.status(200).json(JSON.stringify(req.body));
 })
 
 console.log(`app is listening on port ${PORT}`);
